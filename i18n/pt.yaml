@@ -1,0 +1,287 @@
+navbar:
+  home: "Início"
+  portfolio: "Portfolio"
+  connect: "Conectar"
+  discover: "Descobrir"
+  explore: "Explorar"
+  profile: "Minha Conta"
+  settings: "Configurações"
+shared:
+  or: "OU"
+  generic_error: "Algo deu errado. Tente novamente..."
+  swipe_to_delete: "Arraste para excluir"
+  see_more: "Ver mais "
+  continue: "CONTINUAR"
+home:
+  greetings: "Olá, {name}! 👋"
+  coin_of_the_day:
+    title: "🎉 Destaque do dia"
+    last_24_hours: "Últimas 24 Horas"
+  favorite_coins_carousel:
+    title: "Favoritos"
+  header:
+    see_performance: "See performance"
+    balance_summary:
+      portfolio_syncing: "Sincronizando portfolio"
+  coins_carousel:
+    title: "Minhas moedas"
+  news_carousel:
+    title: "Últimas notícias"
+  share_with_friends:
+    callout: "Indique o aplicativo\npara os seus amigos!"
+    message: "Vem comigo ser Wisemade!\nAqui você pode gerir seu portfolio, descobrir novos projetos e ficar informado 24/7 sobre tudo o que acontece no mercado cripto.\n\n{url}"
+    button: "Convidar"
+  top_influencers:
+    title: "Influenciadores mais relevantes"
+add_resource:
+  title: "Conectar"
+  tabs:
+    wallet: "Wallet"
+    manual_input: "Transação manual"
+add_transaction:
+  amount: "Quantidade"
+  price: "Preço"
+  fee: "Taxa cobrada"
+  total: "Total da transação"
+  select_coin: "Selecione uma criptomoeda"
+  button: "ADICIONAR"
+  search:
+    coin:
+      label: "Criptomoeda"
+      hint: "Pesquise por uma criptomoeda"
+    exchange:
+      label: "Exchange/Wallet"
+      hint: "Pesquise pela exchange ou wallet"
+  transacted_at: "Transação realizada em {date}"
+  success: "Transação adicionada com sucesso"
+add_wallet:
+  address_copied: "Endereço copiado para a área de transferência"
+  wallet_address: "Endereço da carteira"
+  button: "CONECTAR WALLET"
+  loading:
+    first: "Conectando sua wallet..."
+    second: "Acessando dados da Blockchain..."
+    third: "Sincronizando transações..."
+    fourth: "Quase lá..."
+  success: "Wallet adicionada com sucesso. Suas transações serão exibidas em instantes."
+  already_exists_error: "Essa wallet já foi adicionada"
+  generic_error: "Algo deu errado. Tente novamente..."
+  supported_networks:
+    cta: "Não encontrou suas transações?"
+    title: "Suporte às redes na Wisemade"
+    content: "Nossa equipe está trabalhando continuamente para integrar mais redes ao nosso rastreador de portfólio de criptomoedas. No entanto, se suas transações ainda não estiverem visíveis, oferecemos a opção de adicioná-las manualmente.\n\nEnquanto isso, aqui está a lista de nossas redes atualmente suportadas:"
+portfolio:
+  general: "Geral"
+  no_coins: "Você ainda não possui nenhuma criptomoeda cadastrada"
+  no_coins_button: "CONECTAR WALLET"
+  no_coins_found: "Nenhuma moeda encontrada"
+  add_token: "Adicionar moeda"
+  stats:
+    net_worth: "Patrimônio"
+    profit: "Lucro"
+    total_invested: "Total investido"
+    fees: "Total de taxas"
+  exclusion_confirm:
+    title: "Confirmar exclusão da exchange"
+    content: "Tem certeza de que deseja excluir os dados da exchange?\n\nIsso removerá todas transações cadastradas para a exchange, e não poderá ser desfeito."
+    yes: "Sim, quero excluir"
+    cancel: "Cancelar"
+  coins_summary:
+    title: "Minhas moedas"
+    portfolio_syncing: "Sua wallet está sendo sincronizada... \nEm breve você poderá ver suas moedas aqui."
+    no_coins_found: "Nenhuma moeda foi adicionada no seu portfolio"
+  my_coin:
+    balance: "Em carteira"
+    profit: "Lucro"
+    total_amount: "Total de moedas"
+    total_invested: "Total investido"
+    average_buy_price: "Preço médio"
+transactions:
+  title: "Minhas transações"
+  exclusion_success: "Transação excluída com sucesso"
+  exclusion_confirm:
+    title: "Confirmar exclusão"
+    content: "Tem certeza de que deseja excluir esta transação? Essa ação é irreversível."
+    yes: "Sim, quero excluir"
+    cancel: "Cancelar"
+  no_transactions_found: "Nenhuma transação encontrada"
+  transaction_type:
+    deposit: "Depósito"
+    withdrawal: "Retirada"
+coin:
+  title: "O que é {coinName}?"
+  markets: "Onde comprar"
+  tabs:
+    overview: "Overview"
+    details: "Detalhes do projeto"
+  stats:
+    title: "🔥 Estatísticas"
+    market_cap: "Market Cap"
+    volume: "Volume (24h)"
+    market_dominance: "Dominância de mercado / social"
+    circulating_supply: "Moedas em circulação"
+    total_supply: "Fornecimento total"
+    max_supply: "Fornecimento total"
+    ath: "ATH (Alta histórica)"
+    atl: "ATL (Baixa histórica)"
+  statistic_bars:
+    bearish: "Bearish"
+    bullish: "Bullish"
+    sentiment: "Sentimento"
+    low_performance: "Baixo    "
+    high_performance: "    Alto"
+    performance: "Performance"
+    low_volatility: "Baixa    "
+    high_volatility: "    Alta"
+    volatility: "Volatilidade"
+
+
+  social_stats:
+    social_engagement: "Engajamento social (24h)"
+    mentions: "Menções"
+    shares: "Shares"
+    youtube: "Youtube"
+    reddit: "Reddit"
+    tweets: "Tweets"
+auth:
+  google: "ENTRAR COM GOOGLE"
+  apple: "ENTRAR COM APPLE"
+  walletconnect: "ENTRAR COM WALLETCONNECT"
+  title: "Fazer login"
+  signup: "Cadastrar"
+  button: "CONTINUAR"
+  fields:
+    password: "Senha"
+    password_confirmation: "Repita a sua senha"
+    name: "Nome Completo"
+  errors:
+    email: "Informe um e-mail válido"
+  terms:
+    part_1: "Ao se cadastrar, você confirma que concorda com os "
+    part_2: "Termos e condições"
+    part_3: " e com a "
+    part_4: "Política de privacidade"
+explore:
+  top_influencers: "Top influencers"
+  relevant_videos: "Vídeos relevantes"
+  learn_more:
+    crypto_guide:
+      part_1: "Guia para iniciantes\nsobre "
+      part_2: "Criptomoedas"
+      webview_title: "Tudo sobre Criptomoedas"
+      cta: "Aprender"
+    nft_guide:
+      part_1: "Guia para iniciantes\nsobre "
+      part_2: "NFTs"
+      webview_title: "Tudo sobre NFTs"
+      cta: "Aprender"
+discover:
+  filters:
+    market:
+      engagement: "Engajamento"
+      trending: "Em tendência"
+      top_gainers: "Maiores ganhos"
+      market_cap: "Market Cap"
+    categories:
+      smart_contracts: "Smart Contracts"
+      defi: "DeFi"
+      nft: "NFT"
+      ai: "Inteligência Artificial"
+      metaverse: "Metaverso"
+      play_to_earn: "Play-to-earn"
+      sports: "Esportes"
+intro:
+  steps:
+    first:
+      headline: "O universo cripto na palma da sua mão"
+      description: "Facilitamos o seu acesso ao mundo dos criptoativos."
+    second:
+      headline: "Gerencie suas criptomoedas"
+      description: "Acompanhe o desempenho do seu portfolio e descubra novas oportunidades."
+    third:
+      headline: "Fique por dentro do mercado"
+      description: "Utilize o Discover para ficar informado dos projetos em tendência, notícias, influenciadores e muito mais."
+market_news:
+  title: "Tudo sobre o mercado"
+  tabs:
+    news: "Notícias"
+    influencers: "Influenciadores"
+performance_report:
+  title: "Performance"
+  subtitle: "O que aconteceu enquanto você esteve fora"
+  description: "Esse foi o desempenho da minha carteira de criptomoedas desde {date}"
+  share_button: "COMPARTILHAR"
+  top_gainers: "As moedas que mais valorizaram"
+  top_losers: "As moedas que mais desvalorizaram"
+profile:
+  nft_webview_title: "Como resgatar seu NFT"
+  nft_cta: "Resgate o seu NFT"
+  menu:
+    title: "Informações"
+    terms_and_conditions:
+      title: "Termos e condições"
+      webview_title: "Termos e condições de uso"
+    settings: "Configurações"
+    logout: "Sair"
+settings:
+  options:
+    language: "Escolher idioma"
+    delete_account: "Encerrar minha conta"
+  delete_account:
+    title: "Confirmar exclusão da conta"
+    content: "Tem certeza de que deseja encerrar sua conta?\n\nIsso removerá todos os seus dados e não poderá ser desfeito."
+    yes: "Sim, quero apagar minha conta"
+    cancel: "Cancelar"
+  language:
+    english: "Inglês"
+    portuguese: "Português"
+    spanish: "Espanhol"
+    success: "Idioma alterado com sucesso"
+fiat_setup:
+  subtitle: "Escolha a sua moeda preferida"
+  currencies:
+    brl: "Real"
+    usd: "Dólar"
+    eur: "Euro"
+setup:
+  title: "Queremos te conhecer melhor!"
+  steps:
+    age:
+      question: "Qual a sua idade?"
+      alternatives:
+        first: "18 a 24 anos"
+        second: "25 a 32 anos"
+        third: "33 a 40 anos"
+        fourth: "Mais de 40 anos"
+    invested_amount_12_months:
+      question: "Quanto você investiu em criptomoedas nos últimos 12 meses?"
+      alternatives:
+        first: "Não investi nos últimos 12 meses"
+        second: "Até {symbol} 3.000,00"
+        third: "{symbol} 3.000,00 a {symbol} 10.000,00"
+        fourth: "{symbol} 10.000,00 a {symbol} 30.000,00"
+        fifth: "Mais de {symbol} 30.000,00"
+    patrimony_size:
+      question: "Qual o seu patrimônio em criptomoedas?"
+      alternatives:
+        first: "Ainda não tenho criptomoedas"
+        second: "Até {symbol} 5.000,00"
+        third: "{symbol} 5.001,00 a {symbol} 20.000,00"
+        fourth: "{symbol} 20.001,00 a {symbol} 50.000,00"
+        fifth: "Mais de {symbol} 50.000,00"
+    crypto_knowledge:
+      question: "Qual o seu nível de conhecimento sobre criptomoedas?"
+      alternatives:
+        first: "Não conheço"
+        second: "Conheço um pouco"
+        third: "Conheço bem"
+        fourth: "Conheço muito bem"
+        fifth: "Sou especialista"
+    risk_level:
+      question: "De 1 a 5, qual o seu nível de tolerância a riscos?"
+      alternatives:
+        first: "1"
+        second: "2"
+        third: "3"
+        fourth: "4"
+        fifth: "5"
