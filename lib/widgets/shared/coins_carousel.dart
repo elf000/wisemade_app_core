@@ -6,7 +6,7 @@ import 'package:wisemade_app_core/pages/coin.dart';
 import '../../models/coin.dart';
 import '../../utils/format.dart';
 import '../coin/add_coin_box.dart';
-import '../shared/carousel_skeleton.dart';
+import '../shared/carousel_shimmer.dart';
 
 class CoinsCarousel extends StatefulWidget {
   final List<Coin> coins;

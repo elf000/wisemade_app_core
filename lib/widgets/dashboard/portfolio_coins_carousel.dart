@@ -7,7 +7,7 @@ import 'package:wisemade_app_core/pages/coin.dart';
 import '../../app_state.dart';
 import '../../utils/format.dart';
 import '../coin/add_coin_box.dart';
-import '../shared/carousel_skeleton.dart';
+import '../shared/carousel_shimmer.dart';
 import '../shared/percentage.dart';
 
 class PortfolioCoinsCarousel extends StatefulWidget {

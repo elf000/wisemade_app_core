@@ -46,7 +46,7 @@ class _SetupPageState extends State<SetupPage> {
     final titleText = FlutterI18n.translate(context, 'setup.title');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Container(
           padding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
           child: SingleChildScrollView(

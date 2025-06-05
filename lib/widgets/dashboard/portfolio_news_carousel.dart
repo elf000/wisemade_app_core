@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:wisemade_app_core/app_state.dart';
 
 import '../../models/news.dart';
-import '../../pages/market_news.dart';
 import '../shared/news.dart';
 
 class PortfolioNewsCarousel extends StatefulWidget {

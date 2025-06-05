@@ -60,7 +60,7 @@ class _AuthPageState extends State<AuthPage> {
     final termsPart4Text = FlutterI18n.translate(context, 'auth.terms.part_4');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: const CustomAppBar(
         withLogo: true,
         center: true,

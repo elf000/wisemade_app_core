@@ -28,9 +28,9 @@ class _ProfilePageState extends AuthenticatedPageState<SettingsPage> {
     if(!mounted) return;
     Navigator.of(context).pop();
 
-    ScaffoldMessenger.of(context!).showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(successText, style: Theme.of(context!).textTheme.bodyMedium?.copyWith(color: Colors.black)),
+        content: Text(successText, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black)),
         backgroundColor: Theme.of(context).colorScheme.tertiary,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(20),
@@ -81,7 +81,7 @@ class _ProfilePageState extends AuthenticatedPageState<SettingsPage> {
     final portugueseText = FlutterI18n.translate(context, 'settings.language.portuguese');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(title: titleText, preferredSize: const Size.fromHeight(50)),
       body: Consumer<AppState>(
         builder: (context, state, child) {

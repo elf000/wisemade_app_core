@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:wisemade_app_core/widgets/coin/simple_list_item.dart';
-import 'package:wisemade_app_core/widgets/shared/list_skeleton.dart';
+import 'package:wisemade_app_core/widgets/shared/list_shimmer.dart';
 
 import '../../models/coin.dart';
 import '../../pages/coin.dart';

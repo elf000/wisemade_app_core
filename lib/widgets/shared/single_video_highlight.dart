@@ -19,7 +19,7 @@ class SingleVideoHighlight extends StatelessWidget {
       child: InkWell(
         onTap: () {
           PersistentNavBarNavigator.pushNewScreen(
-            context!,
+            context,
             screen: WebviewScreen(url: video.url, title: video.title),
             withNavBar: false,
           );

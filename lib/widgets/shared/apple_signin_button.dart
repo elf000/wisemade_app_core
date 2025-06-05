@@ -41,7 +41,7 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
               _signInWithApple()
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.background),
+              backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.surface),
               padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(20)),
             ),
 

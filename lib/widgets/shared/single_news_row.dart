@@ -19,7 +19,7 @@ class SingleNewsRow extends StatelessWidget {
       child: InkWell(
         onTap: () {
           PersistentNavBarNavigator.pushNewScreen(
-            context!,
+            context,
             screen: WebviewScreen(url: news.url, title: news.source),
             withNavBar: false,
           );

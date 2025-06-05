@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:skeletons/skeletons.dart';
-import 'package:wisemade_app_core/pages/market_news.dart';
-
-import '../../models/news.dart';
-import '../../pages/webview_screen.dart';
-import 'carousel_skeleton.dart';
+import 'package:shimmer/shimmer.dart';
 
 class InfluencersCarousel extends StatelessWidget {
   const InfluencersCarousel({
-    Key? key,
+    super.key,
     required this.influencers,
     this.selectedChannel,
     required this.onSelect,
-  }) : super(key: key);
+  });
 
   final List influencers;
   final String? selectedChannel;
@@ -21,59 +15,59 @@ class InfluencersCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: 72,
       margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
       child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: influencers.isNotEmpty ? [
-            Container(
-                margin: const EdgeInsets.fromLTRB(20, 0, 5, 0),
-                child: Thumbnail(
-                  id: influencers.first['id'],
-                  url: influencers!.first['thumbnail'],
-                  selected: selectedChannel == influencers[0]['id'],
-                  alwaysOn: selectedChannel == null,
-                  onSelect: onSelect,
-                )
+        scrollDirection: Axis.horizontal,
+        children: influencers.isNotEmpty
+            ? [
+          // Primeiro
+          Container(
+            margin: const EdgeInsets.fromLTRB(20, 0, 5, 0),
+            child: Thumbnail(
+              id: influencers.first['id'],
+              url: influencers.first['thumbnail'],
+              selected: selectedChannel == influencers[0]['id'],
+              alwaysOn: selectedChannel == null,
+              onSelect: onSelect,
             ),
-            ...influencers.getRange(1, influencers.length - 1).map<Widget>((influencer) =>
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 5),
-                    child: Thumbnail(
-                      id: influencer['id'],
-                      url: influencer['thumbnail'],
-                      selected: selectedChannel == influencer['id'],
-                      alwaysOn: selectedChannel == null,
-                      onSelect: onSelect,
-                    )
-                )
-            ).toList(),
+          ),
+          // Meio
+          for (var influencer in influencers.sublist(1, influencers.length - 1))
             Container(
-                margin: const EdgeInsets.fromLTRB(5, 0, 20, 0),
-                child: Thumbnail(
-                  id: influencers[influencers.length - 1]['id'],
-                  url: influencers[influencers.length - 1]['thumbnail'],
-                  selected: selectedChannel == influencers[influencers.length - 1]['id'],
-                  alwaysOn: selectedChannel == null,
-                  onSelect: onSelect,
-                )
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              child: Thumbnail(
+                id: influencer['id'],
+                url: influencer['thumbnail'],
+                selected: selectedChannel == influencer['id'],
+                alwaysOn: selectedChannel == null,
+                onSelect: onSelect,
+              ),
             ),
-          ] : [
+          // Último
+          Container(
+            margin: const EdgeInsets.fromLTRB(5, 0, 20, 0),
+            child: Thumbnail(
+              id: influencers.last['id'],
+              url: influencers.last['thumbnail'],
+              selected: selectedChannel == influencers.last['id'],
+              alwaysOn: selectedChannel == null,
+              onSelect: onSelect,
+            ),
+          ),
+        ]
+            : [
+          const SizedBox(width: 20),
+          for (int i = 0; i < 8; i++)
             Container(
-                margin: const EdgeInsets.fromLTRB(20, 0, 5, 0),
-                child: SkeletonAvatar(style: SkeletonAvatarStyle(height: 72, width: 72, borderRadius: BorderRadius.circular(50)))
+              margin: EdgeInsets.only(
+                left: i == 0 ? 0 : 5,
+                right: i == 7 ? 20 : 5,
+              ),
+              child: const ShimmerCircle(),
             ),
-            ...List.filled(6, null).map((i) => Container(
-                margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
-                child: SkeletonAvatar(style: SkeletonAvatarStyle(height: 72, width: 72, borderRadius: BorderRadius.circular(50)))
-            )).toList(),
-            Container(
-                margin: const EdgeInsets.fromLTRB(5, 0, 20, 0),
-                child: SkeletonAvatar(style: SkeletonAvatarStyle(height: 72, width: 72, borderRadius: BorderRadius.circular(50)))
-            ),
-          ],
+        ],
       ),
     );
   }
@@ -106,11 +100,13 @@ class Thumbnail extends StatelessWidget {
         height: 72,
         width: 72,
         decoration: BoxDecoration(
-          border: selected && alwaysOn != true ? Border.all(
+          border: selected && alwaysOn != true
+              ? Border.all(
             width: 2,
-            color: Theme.of(context).colorScheme.secondary
-          ) : null,
-          borderRadius: BorderRadius.circular(50)
+            color: Theme.of(context).colorScheme.secondary,
+          )
+              : null,
+          borderRadius: BorderRadius.circular(50),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(50),
@@ -119,9 +115,29 @@ class Thumbnail extends StatelessWidget {
             width: 72,
             color: selected || alwaysOn == true ? Colors.white : Colors.black54,
             colorBlendMode: BlendMode.darken,
-          )
-        )
-      )
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ShimmerCircle extends StatelessWidget {
+  const ShimmerCircle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: const Color(0xFF2A2A2A),
+      highlightColor: const Color(0xFF3A3A3A),
+      child: Container(
+        width: 72,
+        height: 72,
+        decoration: BoxDecoration(
+          color: Colors.grey[800],
+          borderRadius: BorderRadius.circular(50),
+        ),
+      ),
     );
   }
 }

@@ -87,7 +87,7 @@ class _MarketCoinsPageState extends AuthenticatedPageState<DiscoverPage> {
     final sportsText = FlutterI18n.translate(context, 'discover.filters.categories.sports');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(preferredSize: const Size.fromHeight(70), withSearch: true, withAvatar: true, title: titleText),
       body: SafeArea(
         child: Consumer<AppState>(

@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
-import 'package:flutter_session_manager/flutter_session_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:wisemade_app_core/infrastructure/wisemade_api.dart';
 import 'package:wisemade_app_core/widgets/shared/influencers_carousel.dart';
@@ -60,7 +59,7 @@ class _DiscoverPageState extends AuthenticatedPageState<ExplorePage> {
     final relevantVideosText = FlutterI18n.translate(context, 'explore.relevant_videos');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(preferredSize: const Size.fromHeight(70), withSearch: true, withAvatar: true, title: titleText),
       body: SafeArea(
         child: Consumer<AppState>(

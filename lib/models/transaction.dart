@@ -1,9 +1,7 @@
 import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart' as timeago;
-import 'package:wisemade_app_core/models/asset_holder.dart';
-import 'package:wisemade_app_core/utils/format.dart';
 
-import '../utils/timeago_ptbr.dart';
+import 'package:wisemade_app_core/models/asset_holder.dart';
+
 import 'my_coin.dart';
 
 class Transaction {

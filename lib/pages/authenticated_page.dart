@@ -1,3 +1,5 @@
+// lib/pages/authenticated_page.dart
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -20,7 +22,6 @@ abstract class AuthenticatedPageState<T extends StatefulWidget> extends State<T>
   @override
   void initState() {
     super.initState();
-
     authHandled = handleAuth();
   }
 
@@ -28,10 +29,10 @@ abstract class AuthenticatedPageState<T extends StatefulWidget> extends State<T>
     AppState appState = Provider.of<AppState>(context, listen: false);
     var session = SessionManager();
 
-    if(!await session.containsKey('uid')) {
-      if(!mounted) return false;
+    if (!await session.containsKey('uid')) {
+      if (!mounted) return false;
       PersistentNavBarNavigator.pushNewScreen(
-        context!,
+        context,
         screen: const IntroPage(),
         withNavBar: false,
       );
@@ -39,16 +40,19 @@ abstract class AuthenticatedPageState<T extends StatefulWidget> extends State<T>
     }
 
     appState.getCurrentUser(callback: () {
-      if(appState.currentUser != null) {
+      if (appState.currentUser != null) {
         mixpanel.identify(appState.currentUser!.id.toString());
-        mixpanel.registerSuperProperties({ '\$email': appState.currentUser!.email, '\$name': appState.currentUser!.name });
+        mixpanel.registerSuperProperties({
+          '\$email': appState.currentUser!.email,
+          '\$name': appState.currentUser!.name,
+        });
 
         mixpanel.getPeople().set('\$name', appState.currentUser!.name);
         mixpanel.getPeople().set('\$email', appState.currentUser!.email);
 
-        if(appState.currentUser?.metadata?['riskLevel'] == null) {
+        if (appState.currentUser?.metadata?['riskLevel'] == null) {
           PersistentNavBarNavigator.pushNewScreen(
-            context!,
+            context,
             screen: const SetupPage(),
             withNavBar: false,
           );
@@ -66,14 +70,14 @@ abstract class AuthenticatedPageState<T extends StatefulWidget> extends State<T>
     return FutureBuilder(
       future: authHandled,
       builder: (context, snapshot) {
-        if(snapshot.hasData && snapshot.data! == true) {
+        if (snapshot.hasData && snapshot.data! == true) {
           return render(context);
         }
 
         return const Center(
-            child: CircularProgressIndicator()
+          child: CircularProgressIndicator(),
         );
-      }
+      },
     );
   }
 }

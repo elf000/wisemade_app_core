@@ -6,7 +6,7 @@ import 'package:wisemade_app_core/pages/market_news.dart';
 import '../../main.dart';
 import '../../models/news.dart';
 import '../../pages/webview_screen.dart';
-import 'carousel_skeleton.dart';
+import 'carousel_shimmer.dart';
 
 class NewsCarousel extends StatelessWidget {
   const NewsCarousel({
@@ -104,7 +104,7 @@ class Card extends StatelessWidget {
     return InkWell(
         onTap: () {
           PersistentNavBarNavigator.pushNewScreen(
-            context!,
+            context,
             screen: WebviewScreen(url: news.url, title: news.source),
             withNavBar: false,
           );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 
 import '../../models/coin.dart';
-import '../shared/list_skeleton.dart';
+import '../shared/list_shimmer.dart';
 
 class SocialStats extends StatefulWidget {
   final Coin? coin;

@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_session_manager/flutter_session_manager.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
@@ -151,7 +150,7 @@ class _DashboardPageState extends AuthenticatedPageState<DashboardPage> {
     mixpanel.track('Viewed Screen - Home');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Consumer<AppState>(
         builder: (context, state, child) {
           // Obtemos os dados diretamente do `state` (já é o AppState),
@@ -211,7 +210,7 @@ class _DashboardPageState extends AuthenticatedPageState<DashboardPage> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.background,
+                            color: Theme.of(context).colorScheme.surface,
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(15),
                               topRight: Radius.circular(15),

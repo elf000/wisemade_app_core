@@ -71,7 +71,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
         onPressed: _signInWithGoogle,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
-            Theme.of(context).colorScheme.background,
+            Theme.of(context).colorScheme.surface,
           ),
           padding: MaterialStateProperty.all<EdgeInsets>(
             const EdgeInsets.all(20),

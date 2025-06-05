@@ -1,17 +1,12 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
-import 'package:skeletons/skeletons.dart';
-import 'package:wisemade_app_core/infrastructure/wisemade_api.dart';
 import 'package:wisemade_app_core/models/portfolio_snapshot.dart';
 import 'package:wisemade_app_core/widgets/shared/list_item.dart';
 
 import '../../app_state.dart';
-import '../../models/news.dart';
 import '../../utils/format.dart';
-import '../shared/list_skeleton.dart';
+import '../shared/list_shimmer.dart';
 import '../shared/percentage.dart';
 
 class CockpitStats extends StatefulWidget {

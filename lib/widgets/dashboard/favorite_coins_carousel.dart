@@ -7,7 +7,7 @@ import '../../app_state.dart';
 import '../../models/coin.dart';
 import '../../utils/format.dart';
 import '../coin/add_coin_box.dart';
-import '../shared/carousel_skeleton.dart';
+import '../shared/carousel_shimmer.dart';
 import '../shared/percentage.dart';
 
 class FavoriteCoinsCarousel extends StatefulWidget {

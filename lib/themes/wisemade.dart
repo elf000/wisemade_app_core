@@ -1,51 +1,57 @@
 import 'package:flutter/material.dart';
 
-const PrimaryColor = Color(0xff230346);
-const PrimaryColorLight = Color(0xff230346);
-const PrimaryColorDark = Color(0xFF10101A);
+// Cores - constantes no padrão lowerCamelCase
+const primaryColor = Color(0xff230346);
+const primaryColorLight = Color(0xff230346);
+const primaryColorDark = Color(0xFF10101A);
 
-const SecondaryColor = Color(0xff50ff9b);
-const SecondaryColorLight = Color(0xFFe5ffff);
-const SecondaryColorDark = Color(0xFF82ada9);
+const secondaryColor = Color(0xff50ff9b);
+const secondaryColorLight = Color(0xFFe5ffff);
+const secondaryColorDark = Color(0xFF82ada9);
 
-const AccentColor = Color(0xFF763BF1);
+const accentColor = Color(0xFF763BF1);
 
-// Dark Colors
-const BackgroundDark = Color(0xFF121225);
-const AccentBackgroundDark = Color(0xff1a1931);
-const TextColorDark = Color(0xFFffffff);
-const SecondaryTextColorDark = Color(0xFFcccccc);
+// Dark Theme
+const backgroundDark = Color(0xFF121225);
+const accentBackgroundDark = Color(0xff1a1931);
+const textColorDark = Color(0xFFffffff);
+const secondaryTextColorDark = Color(0xFFcccccc);
 
-// Light Colors
-const BackgroundLight = Color(0xfff1f1f1);
-const AccentBackgroundLight = Color(0xfff7f7f7);
-const TextColorLight = Color(0xFF222222);
+// Light Theme
+const backgroundLight = Color(0xfff1f1f1);
+const accentBackgroundLight = Color(0xfff7f7f7);
+const textColorLight = Color(0xFF222222);
 
 class WisemadeTheme {
   static final ThemeData darkTheme = _buildDarkTheme();
   static final ThemeData lightTheme = _buildLightTheme();
 
-
   static ThemeData _buildDarkTheme() {
-    final ThemeData base = ThemeData.dark();
+    final base = ThemeData.dark();
 
     return base.copyWith(
-      primaryColor: PrimaryColor,
-      primaryColorDark: PrimaryColorDark,
-      primaryColorLight: PrimaryColorLight,
+      primaryColor: primaryColor,
+      primaryColorDark: primaryColorDark,
+      primaryColorLight: primaryColorLight,
 
       buttonTheme: base.buttonTheme.copyWith(
-        buttonColor: SecondaryColor,
+        buttonColor: secondaryColor,
         textTheme: ButtonTextTheme.primary,
       ),
 
       progressIndicatorTheme: base.progressIndicatorTheme.copyWith(
-        color: AccentColor,
+        color: accentColor,
       ),
 
       inputDecorationTheme: base.inputDecorationTheme.copyWith(
-        enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.white38), borderRadius: BorderRadius.all(Radius.circular(5))),
-        focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AccentColor), borderRadius: BorderRadius.all(Radius.circular(5))),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white38),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: accentColor),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
         labelStyle: const TextStyle(color: Colors.white),
       ),
 
@@ -54,34 +60,33 @@ class WisemadeTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-        )
+        ),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: SecondaryColor,
+          backgroundColor: secondaryColor,
           minimumSize: const Size.fromHeight(60),
           textStyle: const TextStyle(fontSize: 16),
-          foregroundColor: PrimaryColor,
-          disabledBackgroundColor: AccentBackgroundDark.withAlpha(100),
+          foregroundColor: primaryColor,
+          disabledBackgroundColor: accentBackgroundDark.withAlpha(100),
           disabledForegroundColor: Colors.white54,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
-          )
-        )
+          ),
+        ),
       ),
 
       textTheme: base.textTheme.copyWith(
-        headlineMedium: const TextStyle(color: TextColorDark),
-        headlineSmall: const TextStyle(fontSize: 24, color: TextColorDark),
-        titleLarge: const TextStyle(fontSize: 18, color: TextColorDark),
+        headlineMedium: const TextStyle(color: textColorDark),
+        headlineSmall: const TextStyle(fontSize: 24, color: textColorDark),
+        titleLarge: const TextStyle(fontSize: 18, color: textColorDark),
       ),
 
       dividerTheme: base.dividerTheme.copyWith(
-        color: AccentBackgroundDark,
-        thickness: 1
+        color: accentBackgroundDark,
+        thickness: 1,
       ),
-
 
       tabBarTheme: base.tabBarTheme.copyWith(
         labelColor: Colors.white,
@@ -90,61 +95,65 @@ class WisemadeTheme {
         indicatorSize: TabBarIndicatorSize.tab,
         indicator: const BoxDecoration(
           border: Border(
-            bottom: BorderSide(
-              color: AccentColor,
-              width: 2
-            )
-          )
-        )
+            bottom: BorderSide(color: accentColor, width: 2),
+          ),
+        ),
       ),
 
       datePickerTheme: base.datePickerTheme.copyWith(
-        cancelButtonStyle: ButtonStyle(foregroundColor: MaterialStateProperty.all(TextColorDark)),
-        confirmButtonStyle: ButtonStyle(foregroundColor: MaterialStateProperty.all(TextColorDark)),
-        dividerColor: TextColorDark,
+        cancelButtonStyle: ButtonStyle(
+          foregroundColor: WidgetStateProperty.all(textColorDark),
+        ),
+        confirmButtonStyle: ButtonStyle(
+          foregroundColor: WidgetStateProperty.all(textColorDark),
+        ),
+        dividerColor: textColorDark,
       ),
 
-      scaffoldBackgroundColor: BackgroundDark,
-      cardColor: AccentBackgroundDark,
+      scaffoldBackgroundColor: backgroundDark,
+      cardColor: accentBackgroundDark,
+
       colorScheme: base.colorScheme.copyWith(
-        outline: TextColorDark,
+        outline: textColorDark,
         shadow: Colors.white70,
         error: Colors.redAccent[700],
-        primaryContainer: AccentBackgroundDark,
-        background: BackgroundDark,
-        primary: PrimaryColor,
-        secondary: AccentColor,
-        tertiary: SecondaryColor,
-      )
+        primaryContainer: accentBackgroundDark,
+        surface: backgroundDark, // substitui 'background'
+        primary: primaryColor,
+        secondary: accentColor,
+        tertiary: secondaryColor,
+      ),
     );
   }
 
   static ThemeData _buildLightTheme() {
-    final ThemeData base = ThemeData.light();
+    final base = ThemeData.light();
 
     return base.copyWith(
-      primaryColor: PrimaryColor,
-      primaryColorDark: PrimaryColorDark,
-      primaryColorLight: PrimaryColorLight,
+      primaryColor: primaryColor,
+      primaryColorDark: primaryColorDark,
+      primaryColorLight: primaryColorLight,
 
       buttonTheme: base.buttonTheme.copyWith(
-        buttonColor: SecondaryColor,
+        buttonColor: secondaryColor,
         textTheme: ButtonTextTheme.primary,
       ),
 
       textTheme: base.textTheme.copyWith(
-        headlineMedium: const TextStyle(color: TextColorLight),
-        headlineSmall: const TextStyle(fontSize: 24, color: TextColorLight),
-        titleLarge: const TextStyle(fontSize: 18, color: TextColorLight),
+        headlineMedium: const TextStyle(color: textColorLight),
+        headlineSmall: const TextStyle(fontSize: 24, color: textColorLight),
+        titleLarge: const TextStyle(fontSize: 18, color: textColorLight),
       ),
 
-      scaffoldBackgroundColor: BackgroundLight,
-      cardColor: AccentBackgroundLight,
+      scaffoldBackgroundColor: backgroundLight,
+      cardColor: accentBackgroundLight,
+
       colorScheme: base.colorScheme.copyWith(
-        outline: TextColorLight,
-        shadow: TextColorLight,
-        primaryContainer: AccentBackgroundDark
-      ).copyWith(background: BackgroundLight)
+        outline: textColorLight,
+        shadow: textColorLight,
+        primaryContainer: accentBackgroundDark,
+        surface: backgroundLight, // substitui 'background'
+      ),
     );
   }
 }

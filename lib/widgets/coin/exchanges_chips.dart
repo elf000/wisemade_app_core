@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wisemade_app_core/widgets/shared/custom_chip.dart';
 
 import '../../models/coin.dart';
-import '../../utils/format.dart';
 
 class ExchangesChips extends StatelessWidget {
   const ExchangesChips({

@@ -31,7 +31,6 @@ import 'package:wisemade_app_core/models/hathor_wallet.dart';
 
 import 'package:wisemade_app_core/pages/app.dart';
 import 'package:wisemade_app_core/pages/intro.dart';
-import 'package:wisemade_app_core/pages/setup.dart';
 import 'package:wisemade_app_core/pages/sync_wallet_loading.dart';
 
 import 'package:wisemade_app_core/usecases/add_transaction.dart';
@@ -109,14 +108,12 @@ class AppState extends ChangeNotifier {
 
   static const int _pageSizePortfolio    = 10;
   static const int _pageSizeHathor       = 10;
-  static const int _pageSizeTransactions = 10;
   static const int _pageSizeSearch       = 15;
 
   int _portfolioCoinsTotalCount    = 0;
   int _hathorWalletCoinsTotalCount = 0;
   int _coinTransactionsTotalCount  = 0;
   int _searchedCoinsTotalCount     = 0;
-
   MyCoin? _currentCoinForTransactions;
   String? _currentSearchQuery;
   String? _currentSearchCategory;
@@ -522,7 +519,7 @@ class AppState extends ChangeNotifier {
       }
       if (callback != null) callback();
       return currentUser!;
-    } on Exception catch (_, e) {
+    } on Exception catch (_) {
       // Se algo der errado, limpa sessão e retorna à IntroPage
       AppState appState = Provider.of<AppState>(context!, listen: false);
       var session = SessionManager();
@@ -579,7 +576,7 @@ class AppState extends ChangeNotifier {
   /// Seleciona AssetHolder e atualiza dados relacionados
   void selectAssetHolder(AssetHolder? ah) async {
     selectedAssetHolder = ah;
-    if (ah?.id != null) getAssetHolder(ah!.id!, type: ah?.type);
+    if (ah != null) getAssetHolder(ah.id, type: ah.type);
     await getPortfolioSnapshot(exchangePortfolioId: ah?.id, refresh: true);
     // Em vez de chamar getPortfolioCoinsSummary, utilizamos a paginação:
     portfolioCoins.clear();

@@ -71,7 +71,7 @@ class _PortfolioState extends State<Portfolio> {
                       ElevatedButton(
                           onPressed: () {
                             PersistentNavBarNavigator.pushDynamicScreen(
-                              context!,
+                              context,
                               screen: MaterialPageRoute(
                                   fullscreenDialog: true,
                                   builder: (context) => const AddResource()

@@ -35,7 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
 
     return AppBar(
       automaticallyImplyLeading: true,
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       titleSpacing: 20,
       centerTitle: center,
       title: getTitle(context),
@@ -56,7 +56,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
               GestureDetector(
                 onTap: () async {
                   PersistentNavBarNavigator.pushDynamicScreen(
-                    context!,
+                    context,
                     screen: MaterialPageRoute(
                         fullscreenDialog: true,
                         builder: (context) => const ProfilePage(),

@@ -6,7 +6,7 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:sliver_tools/sliver_tools.dart';
-import 'package:wisemade_app_core/widgets/shared/list_skeleton.dart';
+import 'package:wisemade_app_core/widgets/shared/list_shimmer.dart';
 
 import '../../app_state.dart';
 import '../../models/my_coin.dart';         // ← ADICIONE ESTA LINHA

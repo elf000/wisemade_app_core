@@ -46,7 +46,7 @@ class _CockpitPageState extends AuthenticatedPageState<PortfolioPage> {
         length: 2,
         initialIndex: 0,
         child: Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: CustomAppBar(
             withAvatar: true,
             title: titleText,

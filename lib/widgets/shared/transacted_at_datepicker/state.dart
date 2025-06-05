@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/coin.dart';
-import '../../../models/exchange.dart';
-
-
 class TransactedAtDatepickerState extends ChangeNotifier {
   final BuildContext context;
 

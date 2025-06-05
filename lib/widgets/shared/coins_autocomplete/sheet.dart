@@ -6,7 +6,7 @@ import '../../../app_state.dart';
 import '../../../models/coin.dart';
 import '../../../models/exchange.dart';
 import '../../coin/simple_list_item.dart';
-import '../list_skeleton.dart';
+import '../list_shimmer.dart';
 
 class Sheet extends StatefulWidget {
   final Exchange? exchange;
@@ -55,7 +55,7 @@ class _SheetState extends State<Sheet> {
       child: Consumer<AppState>(
         builder: (context, state, child) => Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           height: MediaQuery.of(context).size.height * 0.8,
@@ -65,7 +65,7 @@ class _SheetState extends State<Sheet> {
                 scrolledUnderElevation: 0,
                 pinned: true,
                 toolbarHeight: 80,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
                 automaticallyImplyLeading: false,
                 title: TextFormField(
                   autocorrect: false,

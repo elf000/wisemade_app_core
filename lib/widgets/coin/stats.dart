@@ -5,7 +5,7 @@ import 'package:wisemade_app_core/app_state.dart';
 
 import '../../models/coin.dart';
 import '../../utils/format.dart';
-import '../shared/list_skeleton.dart';
+import '../shared/list_shimmer.dart';
 import '../shared/percentage.dart';
 
 class CoinStats extends StatefulWidget {

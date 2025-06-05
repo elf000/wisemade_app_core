@@ -36,7 +36,7 @@ class _IntroPageState extends State<IntroPage> {
     final buttonText = FlutterI18n.translate(context, 'shared.continue');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SafeArea(
               child: Container(
                 padding: const EdgeInsets.fromLTRB(20, 50, 20, 40),
@@ -175,10 +175,10 @@ class _IntroPageState extends State<IntroPage> {
 
 class Step extends StatelessWidget {
   const Step({
-    Key? key,
+    super.key,
     required this.offset,
     required this.children,
-  }) : super(key: key);
+  });
 
   final double offset;
   final List<Widget> children;
@@ -188,11 +188,11 @@ class Step extends StatelessWidget {
     double gauss = exp(-(pow((offset.abs() - 0.5), 2) / 0.08));
 
     return Transform.translate(
-      offset: Offset(64 * gauss, 0), //<-- translate the name label
+      offset: Offset(64 * gauss, 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: children
-      )
+        children: children,
+      ),
     );
   }
 }

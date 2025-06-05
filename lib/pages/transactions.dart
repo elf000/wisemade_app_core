@@ -23,7 +23,7 @@ class _TransactionsPageState extends AuthenticatedPageState<TransactionsPage> {
     mixpanel.track('Viewed Screen - Transactions');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: const CustomAppBar(preferredSize: Size.fromHeight(50)),
       body: SafeArea(
         child: CustomScrollView(slivers: [

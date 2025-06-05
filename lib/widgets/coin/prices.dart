@@ -5,7 +5,7 @@ import 'package:wisemade_app_core/utils/format.dart';
 import 'package:wisemade_app_core/widgets/shared/percentage.dart';
 
 import '../../models/coin.dart';
-import '../shared/text_skeleton.dart';
+import '../shared/text_shimmer.dart';
 
 class CoinPrices extends StatelessWidget {
   final Coin? coin;

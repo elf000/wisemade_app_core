@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class PortfolioSnapshot {
   final double balance;
   final double profit;

@@ -55,7 +55,7 @@ class _ProfilePageState extends AuthenticatedPageState<ProfilePage> {
     final logoutText = FlutterI18n.translate(context, 'profile.menu.logout');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(title: titleText, preferredSize: const Size.fromHeight(70), withAvatar: false, withSearch: false),
       body: Consumer<AppState>(
         builder: (context, state, child) {

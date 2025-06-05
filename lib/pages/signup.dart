@@ -68,7 +68,7 @@ class _SignupPageState extends State<SignupPage> {
     final buttonText = FlutterI18n.translate(context, 'shared.continue');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: const CustomAppBar(
         withLogo: true,
         center: true,

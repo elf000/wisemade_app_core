@@ -60,10 +60,10 @@ class _CoinPageState extends AuthenticatedPageState<CoinPage> {
       length: 2,
       initialIndex: 0,
       child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           title: CoinHeader(coin: widget.myCoin, inline: true),
           bottom: TabBar(
               indicatorColor: Theme.of(context).colorScheme.secondary,
@@ -107,8 +107,7 @@ class OverviewTab extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
                         decoration: BoxDecoration(color: Theme
                             .of(context)
-                            .colorScheme
-                            .background),
+                            .colorScheme.surface),
                         child: Row(
                           children: [
                             SentimentChip(
@@ -125,8 +124,7 @@ class OverviewTab extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(20, 30, 20, 30),
                         decoration: BoxDecoration(color: Theme
                             .of(context)
-                            .colorScheme
-                            .background),
+                            .colorScheme.surface),
                         child: CoinPrices(coin: coin),
                       ),
                       Container(
@@ -137,8 +135,7 @@ class OverviewTab extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(20, 20, 20, 30),
                         decoration: BoxDecoration(color: Theme
                             .of(context)
-                            .colorScheme
-                            .background),
+                            .colorScheme.surface),
                         child: StatisticBars(coin: coin),
                       ),
                       Container(
@@ -181,7 +178,7 @@ class DetailsTab extends StatelessWidget {
             delegate: SliverChildListDelegate([
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 40),
-                decoration: BoxDecoration(color: Theme.of(context).colorScheme.background),
+                decoration: BoxDecoration(color: Theme.of(context).colorScheme.surface),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -198,7 +195,7 @@ class DetailsTab extends StatelessWidget {
                             label: Text(category),
                             onSelected: (_) {
                               PersistentNavBarNavigator.pushDynamicScreen(
-                                context!,
+                                context,
                                 screen: MaterialPageRoute(
                                     fullscreenDialog: true,
                                     builder: (context) => CoinsSearchPage(filters: { 'category': category })

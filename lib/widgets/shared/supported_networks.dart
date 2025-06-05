@@ -30,7 +30,7 @@ class SupportedNetworks extends StatelessWidget {
       onTap: () {
         showModalBottomSheet(
             context: context,
-            backgroundColor: Theme.of(context).colorScheme.background,
+            backgroundColor: Theme.of(context).colorScheme.surface,
             showDragHandle: true,
             enableDrag: true,
             builder: (context) {

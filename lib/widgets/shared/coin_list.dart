@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:wisemade_app_core/widgets/shared/list_skeleton.dart';
+import 'package:wisemade_app_core/widgets/shared/list_shimmer.dart';
 
 import '../../models/coin.dart';
 import '../../pages/coin.dart';
@@ -34,7 +34,7 @@ class CoinList extends StatelessWidget {
                 coin: coin,
                 favorite: favorites?.where((c) => c.symbol == coin.symbol).isNotEmpty,
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CoinPage(myCoin: coin!)));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CoinPage(myCoin: coin)));
                 })).toList()
         ) else const ListSkeleton(size: 10, height: 65)
       ]

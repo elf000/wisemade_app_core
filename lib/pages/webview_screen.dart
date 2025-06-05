@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -29,7 +27,7 @@ class _WebviewScreenState extends State<WebviewScreen> {
 
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(Theme.of(context).colorScheme.background)
+      ..setBackgroundColor(Theme.of(context).colorScheme.surface)
       ..loadRequest(Uri.parse(widget.url));
   }
 

@@ -1,13 +1,9 @@
-import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:provider/provider.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:wisemade_app_core/pages/setup.dart';
-import 'package:wisemade_app_core/widgets/shared/list_item.dart';
 
 import '../app_state.dart';
-import '../main.dart';
 
 
 class FiatSetupPage extends StatefulWidget {
@@ -29,7 +25,7 @@ class _FiatSetupPageState extends State<FiatSetupPage> {
     final eurText = FlutterI18n.translate(context, 'fiat_setup.currencies.eur');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Container(
           padding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
           child: SingleChildScrollView(

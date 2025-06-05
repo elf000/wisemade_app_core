@@ -68,7 +68,7 @@ class _PortfolioSummaryHeroState extends State<PortfolioSummaryHero> {
                                 child: OutlinedButton(
                                   onPressed: () {
                                     PersistentNavBarNavigator.pushNewScreen(
-                                      context!,
+                                      context,
                                       screen: const WebviewScreen(url: 'https://blog.wisemade.io/tutorial-nft', title: 'Como resgatar seu NFT'),
                                       withNavBar: false,
                                     );
@@ -177,7 +177,7 @@ class BalanceSummaryCard extends StatelessWidget {
                         ),
                         onTap: () {
                           PersistentNavBarNavigator.pushDynamicScreen(
-                            context!,
+                            context,
                             screen: MaterialPageRoute(
                                 fullscreenDialog: true,
                                 builder: (context) => const PerformanceReportPage()

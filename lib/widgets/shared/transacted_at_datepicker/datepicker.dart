@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:wisemade_app_core/widgets/shared/coins_autocomplete/sheet.dart';
-import 'package:wisemade_app_core/widgets/shared/coins_autocomplete/state.dart';
 import 'package:wisemade_app_core/widgets/shared/transacted_at_datepicker/state.dart';
 
 import '../../../app_state.dart';
-import '../../../models/coin.dart';
-import '../../../models/exchange.dart';
 import '../list_item.dart';
 
 

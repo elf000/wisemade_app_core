@@ -10,7 +10,7 @@ import '../models/coin.dart';
 import '../models/exchange.dart';
 import '../widgets/coin/simple_list_item.dart';
 import '../widgets/shared/appbar.dart';
-import '../widgets/shared/list_skeleton.dart';
+import '../widgets/shared/list_shimmer.dart';
 import 'authenticated_page.dart';
 import 'coin.dart';
 
@@ -60,7 +60,7 @@ class _MarketCoinsPageState extends AuthenticatedPageState<CoinsSearchPage> {
         context, 'add_transaction.search.coin.hint');
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBar(
         title: widget.filters?['category'] as String?,
         preferredSize: const Size.fromHeight(40),

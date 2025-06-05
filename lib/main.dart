@@ -1,5 +1,3 @@
-// lib/main.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_i18n/loaders/decoders/yaml_decode_strategy.dart';
@@ -7,9 +5,9 @@ import 'package:flutter_i18n/loaders/decoders/yaml_decode_strategy.dart';
 import 'package:flutter_uxcam/flutter_uxcam.dart';
 import 'package:mixpanel_flutter/mixpanel_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:wisemade_app_core/pages/app.dart';
-import 'package:wisemade_app_core/themes/skeletons.dart';
-import 'package:wisemade_app_core/themes/wisemade.dart';
+import '/pages/app.dart';
+import '/themes/shimmer_wrapper.dart'; // contém ShimmerThemeWrapper
+import '/themes/wisemade.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app_state.dart';
@@ -28,14 +26,8 @@ void main() async {
       decodeStrategies: [YamlDecodeStrategy()],
     ),
     missingTranslationHandler: (key, locale) {
-      // Substituímos print por debugPrint para evitar logs em produção
+      // Usamos debugPrint para não poluir log em produção
       debugPrint("--- Missing Key: $key, languageCode: ${locale?.languageCode}");
-      // Se quiser usar um logger mais avançado, poderia ser:
-      // import 'dart:developer' as developer;
-      // developer.log(
-      //   'Missing translation: $key para ${locale?.languageCode}',
-      //   name: 'flutter_i18n',
-      // );
     },
   );
 
@@ -44,6 +36,7 @@ void main() async {
     optOutTrackingDefault: false,
     trackAutomaticEvents: true,
   );
+
   runApp(MyApp(flutterI18nDelegate: flutterI18nDelegate));
 }
 
@@ -68,6 +61,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // Inicialização do UXCam
     FlutterUxcam.optIntoSchematicRecordings();
     FlutterUxcam.startWithConfiguration(
       FlutterUxConfig(
@@ -84,7 +78,8 @@ class _MyAppState extends State<MyApp> {
       create: (providerContext) => AppState(context: providerContext),
       child: Consumer<AppState>(
         builder: (_, state, __) {
-          return SkeletonThemeProvider(
+          return ShimmerThemeWrapper(
+            // Substituído SkeletonThemeProvider por ShimmerThemeWrapper
             child: MaterialApp(
               title: 'Wisemade',
               theme: WisemadeTheme.darkTheme,
